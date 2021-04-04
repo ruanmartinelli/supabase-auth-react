@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom'
 
 import { useAuth } from '../contexts/Auth'
 
-export function Login({}) {
+export function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
 
@@ -38,7 +38,7 @@ export function Login({}) {
 
         <br />
 
-        <button type="submit">Sign in</button>
+        <button type="submit">Login</button>
       </form>
       <br />
       <p>
