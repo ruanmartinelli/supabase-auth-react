@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
 
     const { data: listener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        setUser(session?.user)
+        setUser(session?.user ?? null)
         setLoading(false)
       }
     )
@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
     return () => {
       listener?.unsubscribe()
     }
-  }, [user])
+  }, [])
 
   const value = {
     signUp: (data) => supabase.auth.signUp(data),
